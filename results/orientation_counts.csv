@@ -1,0 +1,13 @@
+plane_code,plane,class,n_images,correct,errors
+ax,Axial,glioma,85,84,1
+ax,Axial,meningioma,137,134,3
+ax,Axial,no_tumor,52,52,0
+ax,Axial,pituitary,124,123,1
+co,Coronal,glioma,81,79,2
+co,Coronal,meningioma,86,84,2
+co,Coronal,no_tumor,48,48,0
+co,Coronal,pituitary,90,89,1
+sa,Sagital,glioma,88,87,1
+sa,Sagital,meningioma,83,81,2
+sa,Sagital,no_tumor,40,40,0
+sa,Sagital,pituitary,86,86,0

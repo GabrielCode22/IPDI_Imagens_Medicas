@@ -1,0 +1,24 @@
+{
+  "checkpoint": "checkpoints/best_resnet18.pth",
+  "segmentation_root": "/home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/segmentation_task",
+  "mask_pairing": {
+    "classification_test_total": 1000,
+    "no_tumor_excluded": 140,
+    "tumor_images_seen": 860,
+    "matched_pairs": 860,
+    "missing_seg_image": 0,
+    "missing_mask": 0,
+    "dimension_mismatch": 0
+  },
+  "evaluated_pairs": 860,
+  "cam_threshold": 0.5,
+  "cam_threshold_note": "Limiar aplicado à CAM normalizada individualmente para Dice/IoU.",
+  "metrics_note": "Grad-CAM é mapa de saliência de baixa resolução, não máscara de segmentação. Dice/IoU e métricas pixel a pixel quantificam apenas alinhamento espacial aproximado. A CAM da classe prevista explica a decisão efetiva; a CAM da classe real é uma análise comparativa.",
+  "no_tumor_note": "Imagens no_tumor foram excluídas da comparação de sobreposição porque o subconjunto de segmentação do BRISC fornece máscaras para as três classes tumorais, não máscaras vazias para todos os no_tumor.",
+  "overall_predicted_class_cam": {
+    "dice": 0.13457750976419122,
+    "iou": 0.07724146860228354,
+    "pixel_roc_auc": 0.9342047264643114,
+    "pixel_average_precision": 0.2840229803356069
+  }
+}

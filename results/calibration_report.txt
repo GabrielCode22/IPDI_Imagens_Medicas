@@ -1,0 +1,30 @@
+CALIBRAÇÃO DE PROBABILIDADES — RESNET18 / BRISC
+Temperatura ajustada na validação: 1.205384
+Checkpoint: /home/gabriel/Desktop/IPDI/tumor_cnn/checkpoints/best_resnet18.pth
+
+VALIDAÇÃO (conjunto usado para ajustar a temperatura; leitura otimista)
+Métrica                         Antes          Depois
+accuracy                         0.989000     0.989000
+macro_f1                         0.989319     0.989319
+nll                              0.035015     0.033852
+multiclass_brier                 0.018869     0.018579
+top_label_ece_15_bins            0.006501     0.005477
+macro_classwise_ovr_ece_15_bins  0.004586     0.005767
+mean_top_confidence              0.991903     0.989105
+accuracy_confidence_gap          0.002903     0.000105
+
+TESTE OFICIAL (temperatura não ajustada neste conjunto)
+Métrica                         Antes          Depois
+accuracy                         0.987000     0.987000
+macro_f1                         0.988664     0.988664
+nll                              0.054806     0.050931
+multiclass_brier                 0.023947     0.024088
+top_label_ece_15_bins            0.008624     0.008131
+macro_classwise_ovr_ece_15_bins  0.006703     0.006510
+mean_top_confidence              0.991448     0.988150
+accuracy_confidence_gap          0.004448     0.001150
+
+Nota: temperature scaling preserva as classes previstas (argmax),
+portanto acurácia e F1 devem permanecer iguais. O método altera apenas
+a distribuição de confiança. ECE depende do número e dos limites dos bins.
+A validação foi usada para ajustar a temperatura; priorize o resultado do teste.

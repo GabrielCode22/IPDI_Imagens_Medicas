@@ -1,0 +1,130 @@
+{
+  "method": "global_scalar_temperature_scaling",
+  "temperature": 1.2053838829429009,
+  "temperature_fit_split": "validation_only",
+  "test_size": 1000,
+  "overall_test": {
+    "accuracy": 0.987,
+    "macro_f1": 0.9886639763012949,
+    "top_label_ece_before": 0.008623758852481875,
+    "top_label_ece_after": 0.008130567193031318,
+    "macro_ovr_ece_before": 0.006703381655563111,
+    "macro_ovr_ece_after": 0.006509596687611217,
+    "macro_ovr_brier_before": 0.005986704821324202,
+    "macro_ovr_brier_after": 0.006022064070641715,
+    "multiclass_brier_before": 0.023946819285296815,
+    "multiclass_brier_after": 0.024088256282566868,
+    "nll_before": 0.054806143045425415,
+    "nll_after": 0.05093136429786682
+  },
+  "classwise_ovr_definition": "For each class k, evaluate p(y=k) against binary indicator [y=k] using 15 equal-width bins.",
+  "conditional_top_label_definition": "Among samples whose argmax is class k, compare mean max probability with empirical accuracy; conditional ECE uses 15 bins.",
+  "orientation_note": "Orientation parsed from filename suffix _ax_, _co_, or _sa_; orientation metrics are descriptive subgroups, not separately calibrated.",
+  "optimizer": {
+    "success": true,
+    "validation_nll_at_optimum": 0.033851801506568274,
+    "iterations": 16
+  },
+  "classwise_results": [
+    {
+      "class": "glioma",
+      "positive_support": 254,
+      "ovr_ece_before": 0.008809621261116117,
+      "ovr_ece_after": 0.006932173132095383,
+      "ovr_brier_before": 0.007455362162741282,
+      "ovr_brier_after": 0.007495263828770144,
+      "predicted_count": 254,
+      "precision_when_predicted": 0.984251968503937,
+      "mean_confidence_when_predicted": 0.9825413227081299,
+      "predicted_class_calibration_gap": -0.001710645795807153,
+      "errors_when_predicted": 4,
+      "mean_confidence_on_false_positives": 0.9318957924842834,
+      "true_class_recall": 0.984251968503937
+    },
+    {
+      "class": "meningioma",
+      "positive_support": 306,
+      "ovr_ece_before": 0.01130318475791495,
+      "ovr_ece_after": 0.011615493816624581,
+      "ovr_brier_before": 0.01160411677290147,
+      "ovr_brier_after": 0.011575238412697024,
+      "predicted_count": 305,
+      "precision_when_predicted": 0.980327868852459,
+      "mean_confidence_when_predicted": 0.9813594818115234,
+      "predicted_class_calibration_gap": 0.0010316129590643985,
+      "errors_when_predicted": 6,
+      "mean_confidence_on_false_positives": 0.7448818683624268,
+      "true_class_recall": 0.9771241830065359
+    },
+    {
+      "class": "no_tumor",
+      "positive_support": 140,
+      "ovr_ece_before": 0.0010249401040307658,
+      "ovr_ece_after": 0.0016041242791990187,
+      "ovr_brier_before": 0.00012127799315675596,
+      "ovr_brier_after": 0.00018753405045667649,
+      "predicted_count": 140,
+      "precision_when_predicted": 1.0,
+      "mean_confidence_when_predicted": 0.9990498423576355,
+      "predicted_class_calibration_gap": -0.000950157642364502,
+      "errors_when_predicted": 0,
+      "mean_confidence_on_false_positives": null,
+      "true_class_recall": 1.0
+    },
+    {
+      "class": "pituitary",
+      "positive_support": 300,
+      "ovr_ece_before": 0.005675780499190615,
+      "ovr_ece_after": 0.005886595522525883,
+      "ovr_brier_before": 0.004766062356497302,
+      "ovr_brier_after": 0.0048302199906430174,
+      "predicted_count": 301,
+      "precision_when_predicted": 0.9900332225913622,
+      "mean_confidence_when_predicted": 0.9946928024291992,
+      "predicted_class_calibration_gap": 0.004659579837837047,
+      "errors_when_predicted": 3,
+      "mean_confidence_on_false_positives": 0.9881138801574707,
+      "true_class_recall": 0.9933333333333333
+    }
+  ],
+  "conditional_top_label_results": [
+    {
+      "predicted_class": "glioma",
+      "n_predictions": 254,
+      "accuracy_among_predictions": 0.984251968503937,
+      "mean_top_confidence": 0.9825413227081299,
+      "confidence_accuracy_gap": -0.001710645795807153,
+      "conditional_top_label_ece": 0.01941126045279618
+    },
+    {
+      "predicted_class": "meningioma",
+      "n_predictions": 305,
+      "accuracy_among_predictions": 0.980327868852459,
+      "mean_top_confidence": 0.9813594818115234,
+      "confidence_accuracy_gap": 0.0010316129590643985,
+      "conditional_top_label_ece": 0.010885113966269582
+    },
+    {
+      "predicted_class": "no_tumor",
+      "n_predictions": 140,
+      "accuracy_among_predictions": 1.0,
+      "mean_top_confidence": 0.9990498423576355,
+      "confidence_accuracy_gap": -0.000950157642364502,
+      "conditional_top_label_ece": 0.0009500954832349917
+    },
+    {
+      "predicted_class": "pituitary",
+      "n_predictions": 301,
+      "accuracy_among_predictions": 0.9900332225913622,
+      "mean_top_confidence": 0.9946928024291992,
+      "confidence_accuracy_gap": 0.004659579837837047,
+      "conditional_top_label_ece": 0.011908102075126863
+    }
+  ],
+  "limitations": [
+    "All category-wise results are evaluated on the official test partition; no per-class temperatures are fitted on test.",
+    "ECE depends on binning and can be noisy in subgroups with limited support.",
+    "A global scalar temperature preserves argmax and ranking; it cannot correct class-specific ranking errors.",
+    "The BRISC split is image-based and does not establish patient-independent evaluation."
+  ]
+}

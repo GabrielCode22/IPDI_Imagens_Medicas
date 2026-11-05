@@ -1,0 +1,39 @@
+{
+  "checkpoint": "checkpoints/best_resnet18.pth",
+  "checkpoint_best_epoch": 8,
+  "test_images": 1000,
+  "unknown_orientation_images": 0,
+  "orientation_metrics": [
+    {
+      "plane_code": "ax",
+      "plane": "Axial",
+      "n_images": 398,
+      "accuracy": 0.9874371859296482,
+      "macro_precision": 0.9893823529411765,
+      "macro_recall": 0.9895682419424092,
+      "macro_f1": 0.9894680207578861,
+      "errors": 5
+    },
+    {
+      "plane_code": "co",
+      "plane": "Coronal",
+      "n_images": 305,
+      "accuracy": 0.9836065573770492,
+      "macro_precision": 0.9854765325670498,
+      "macro_recall": 0.9852354292276773,
+      "macro_f1": 0.9853384036030429,
+      "errors": 5
+    },
+    {
+      "plane_code": "sa",
+      "plane": "Sagital",
+      "n_images": 297,
+      "accuracy": 0.98989898989899,
+      "macro_precision": 0.9913332419841052,
+      "macro_recall": 0.9911349945235488,
+      "macro_f1": 0.9912172573189523,
+      "errors": 3
+    }
+  ],
+  "note": "A análise por plano é uma estratificação descritiva por imagem. Grad-CAM é uma explicação visual aproximada e não uma máscara de tumor."
+}
