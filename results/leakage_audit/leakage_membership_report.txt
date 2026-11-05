@@ -1,0 +1,81 @@
+=== DIVISÃO INTERNA RECONSTRUÍDA ===
+ImageFolder train original: 5000
+Treino efetivo para atualizar pesos: 4000
+Validação: 1000
+Parâmetros: test_size=0.2, random_state=42, stratify=labels
+
+=== CANDIDATOS pHash DIRETAMENTE LIGADOS AO TESTE OFICIAL ===
+Imagens únicas de treino diretamente ligadas: 791
+Distribuição na divisão interna: {'fit_train_4000': 645, 'validation_1000': 146}
+
+=== CANDIDATOS EM COMPONENTES TRANSITIVOS ===
+Imagens únicas de treino candidatas: 1191
+Distribuição na divisão interna: {'fit_train_4000': 960, 'validation_1000': 231}
+
+=== GRUPOS EXATOS COM MAIS DE UM PLANO INDICADO ===
+Grupos com planos diferentes nos nomes: 13
+ group_id  n_files splits    classes           planes
+        2        2  train meningioma    axial;coronal
+        3        2  train meningioma    axial;coronal
+        4        2  train meningioma    axial;coronal
+        5        2  train meningioma    axial;coronal
+        8        2  train meningioma    axial;coronal
+       11        2  train meningioma    axial;coronal
+       12        2  train meningioma   axial;sagittal
+       13        2  train meningioma   axial;sagittal
+       14        2  train meningioma   axial;sagittal
+       15        2  train meningioma   axial;sagittal
+       16        2  train meningioma coronal;sagittal
+       42        2   test     glioma    axial;coronal
+       44        2   test meningioma    axial;coronal
+
+=== DUPLICATAS EXATAS ENTRE TRAIN E TEST ===
+Arquivos de treino envolvidos: 9
+Distribuição na divisão interna: {'validation_1000': 4, 'fit_train_4000': 5}
+Detalhamento dos grupos:
+  Grupo 1 | classe=meningioma | planos=axial | lado train=validation_1000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/meningioma/brisc2025_train_01210_me_ax_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/meningioma/brisc2025_test_00344_me_ax_t1.jpg
+  Grupo 10 | classe=meningioma | planos=axial | lado train=fit_train_4000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/meningioma/brisc2025_train_01304_me_ax_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/meningioma/brisc2025_test_00352_me_ax_t1.jpg
+  Grupo 28 | classe=pituitary | planos=axial | lado train=validation_1000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_03705_pi_ax_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00737_pi_ax_t1.jpg
+  Grupo 29 | classe=pituitary | planos=axial | lado train=fit_train_4000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_03749_pi_ax_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00751_pi_ax_t1.jpg
+  Grupo 32 | classe=pituitary | planos=coronal | lado train=validation_1000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_04176_pi_co_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00825_pi_co_t1.jpg
+  Grupo 32 | classe=pituitary | planos=coronal | lado train=fit_train_4000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_04177_pi_co_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00825_pi_co_t1.jpg
+  Grupo 32 | classe=pituitary | planos=coronal | lado train=fit_train_4000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_04178_pi_co_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00825_pi_co_t1.jpg
+  Grupo 33 | classe=pituitary | planos=coronal | lado train=fit_train_4000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_04194_pi_co_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00827_pi_co_t1.jpg
+  Grupo 35 | classe=pituitary | planos=coronal | lado train=validation_1000
+    train: /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/train/pituitary/brisc2025_train_04218_pi_co_t1.jpg
+    test:  /home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task/test/pituitary/brisc2025_test_00834_pi_co_t1.jpg
+
+=== PARES INTERNOS A CADA PARTIÇÃO (pHash <= 6) ===
+Pares train-train: 1980
+Pares test-test: 68
+Imagens únicas de teste envolvidas em pares test-test: 120
+
+=== CONTAGEM DE CANDIDATOS TRANSITIVOS POR CLASSE E DIVISÃO ===
+class       original_internal_split
+glioma      fit_train_4000             251
+            validation_1000             67
+meningioma  fit_train_4000             251
+            validation_1000             50
+no_tumor    fit_train_4000              26
+            validation_1000              8
+pituitary   fit_train_4000             432
+            validation_1000            106
+
+Nota: 'candidato' pHash não equivale a duplicata confirmada ou identidade de paciente.
+Nenhum arquivo do dataset, checkpoint ou resultado anterior foi modificado.

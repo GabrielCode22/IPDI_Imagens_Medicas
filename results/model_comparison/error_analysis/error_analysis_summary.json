@@ -1,0 +1,67 @@
+{
+  "n_test_images": 1000,
+  "n_original_errors": 13,
+  "n_filtered_errors": 45,
+  "n_both_correct": 951,
+  "n_only_filtered_wrong": 36,
+  "n_only_original_wrong": 4,
+  "n_both_wrong": 9,
+  "n_prediction_changes": 40,
+  "filtered_error_true_to_predicted": {
+    "glioma -> meningioma": 20,
+    "meningioma -> no_tumor": 13,
+    "meningioma -> pituitary": 5,
+    "meningioma -> glioma": 3,
+    "no_tumor -> meningioma": 2,
+    "pituitary -> meningioma": 2
+  },
+  "filtered_errors_with_direct_train_phash_match": {
+    "n_images": 45,
+    "n_flagged": 23,
+    "fraction_flagged": 0.5111111111111111
+  },
+  "filtered_errors_with_transitive_train_candidate": {
+    "n_images": 45,
+    "n_flagged": 23,
+    "fraction_flagged": 0.5111111111111111
+  },
+  "filtered_errors_with_exact_train_copy": {
+    "n_images": 45,
+    "n_flagged": 0,
+    "fraction_flagged": 0.0
+  },
+  "filtered_errors_with_exact_copy_in_original_fit": {
+    "n_images": 45,
+    "n_flagged": 0,
+    "fraction_flagged": 0.0
+  },
+  "filtered_errors_with_direct_match_to_original_fit": {
+    "n_images": 45,
+    "n_flagged": 23
+  },
+  "filtered_errors_with_transitive_candidates_from_original_fit": {
+    "n_images": 45,
+    "n_flagged": 23
+  },
+  "all_test_with_direct_train_phash_match": {
+    "n_images": 1000,
+    "n_flagged": 526,
+    "fraction_flagged": 0.526
+  },
+  "all_test_with_transitive_train_candidate": {
+    "n_images": 1000,
+    "n_flagged": 538,
+    "fraction_flagged": 0.538
+  },
+  "all_test_with_exact_train_copy": {
+    "n_images": 1000,
+    "n_flagged": 7,
+    "fraction_flagged": 0.007
+  },
+  "caveats": [
+    "pHash indica similaridade visual e nao identidade de paciente.",
+    "Associacao entre erro e sinal de similaridade nao prova causalidade.",
+    "Os 120 casos test-test relacionados podem gerar dependencia interna no conjunto de teste.",
+    "Resultados sao descritivos para o teste BRISC oficial, nao validacao clinica independente."
+  ]
+}

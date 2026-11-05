@@ -1,0 +1,4 @@
+plane,n_images,original_errors,filtered_errors,changed_predictions,filtered_errors_with_direct_phash,filtered_errors_with_transitive_candidate
+axial,398,5,19,16,10,10
+coronal,305,5,18,15,9,9
+sagittal,297,3,8,9,4,4

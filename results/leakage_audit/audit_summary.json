@@ -1,0 +1,31 @@
+{
+  "dataset_root": "/home/gabriel/Desktop/IPDI/tumor_cnn/data/brisc2025/classification_task",
+  "read_only": true,
+  "n_images_readable": 6000,
+  "n_unreadable": 0,
+  "split_counts": {
+    "train": 5000,
+    "test": 1000
+  },
+  "unknown_plane_counts": {},
+  "exact_duplicate_groups": 46,
+  "exact_duplicate_files_in_groups": 96,
+  "exact_cross_split_groups": 7,
+  "exact_train_test_pair_count": 9,
+  "exact_train_images_linked_to_test": 9,
+  "phash_hamming_threshold": 6,
+  "phash_comparisons_same_class_plane": 1533275,
+  "phash_near_duplicate_pairs": 2939,
+  "phash_cross_split_pairs": 891,
+  "phash_train_images_directly_linked_to_test": 791,
+  "cross_split_connected_components_transitive": 426,
+  "train_images_in_cross_split_components_candidates": 1191,
+  "candidate_train_images_are_not_deleted": true,
+  "caveats": [
+    "pHash indicates visual similarity, not patient identity.",
+    "The same-class/same-plane pHash screen is a heuristic; inspect flagged pairs visually.",
+    "No patient/exam/series identifiers are available, so patient-level independence cannot be established.",
+    "A negative duplicate screen does not prove absence of patient-level or adjacent-slice dependence.",
+    "Do not remove test images or report revised performance without a prespecified protocol and rerunning evaluation."
+  ]
+}

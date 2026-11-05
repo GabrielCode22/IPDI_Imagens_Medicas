@@ -1,0 +1,30 @@
+{
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "train_images": 3047,
+  "validation_images": 762,
+  "train_class_counts": {
+    "glioma": 663,
+    "meningioma": 822,
+    "no_tumor": 827,
+    "pituitary": 735
+  },
+  "validation_class_counts": {
+    "glioma": 166,
+    "meningioma": 206,
+    "no_tumor": 206,
+    "pituitary": 184
+  },
+  "best_epoch": 4,
+  "best_val_loss": 0.1046919115584373,
+  "epochs_completed": 9,
+  "seed": 42,
+  "batch_size": 16,
+  "learning_rate": 0.0001,
+  "patience": 5,
+  "amp_enabled": true,
+  "checkpoint": "/home/gabriel/Desktop/IPDI/tumor_cnn/checkpoints/best_resnet18_filtered.pth",
+  "train_manifest_sha256": "1c140375744c44244dbad9ac3ee4a575e271872cacdfe6e8fd65b5dea31f63d7",
+  "validation_manifest_sha256": "cf1f3d62fba4a7e3efcd16146d6956b1d8b7dd15993bc8ac5f4f3f321b2e1731",
+  "official_test_used": false
+}

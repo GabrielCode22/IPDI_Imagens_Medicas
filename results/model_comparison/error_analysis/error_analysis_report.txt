@@ -1,0 +1,33 @@
+=== ANÁLISE DOS ERROS — RESNET18 ORIGINAL × FILTRADA ===
+Imagens de teste: 1000
+Erros original: 13
+Erros filtrado: 45
+Ambos corretos: 951
+Somente filtrado errou: 36
+Somente original errou: 4
+Ambos erraram: 9
+Previsões diferentes: 40
+
+Erros filtrado por classe real -> classe prevista:
+true_class filtered_prediction  n
+    glioma          meningioma 20
+meningioma            no_tumor 13
+meningioma           pituitary  5
+meningioma              glioma  3
+  no_tumor          meningioma  2
+ pituitary          meningioma  2
+
+Sinais de similaridade entre erros do filtrado:
+Ligação pHash direta: {'n_images': 45, 'n_flagged': 23, 'fraction_flagged': 0.5111111111111111}
+Candidato transitivo: {'n_images': 45, 'n_flagged': 23, 'fraction_flagged': 0.5111111111111111}
+Cópia exata no treino original: {'n_images': 45, 'n_flagged': 0, 'fraction_flagged': 0.0}
+Correspondência direta com treino efetivo original: {'n_images': 45, 'n_flagged': 23}
+Candidato transitivo oriundo do treino efetivo original: {'n_images': 45, 'n_flagged': 23}
+
+Erros por orientação:
+   plane  n_images  original_errors  filtered_errors  changed_predictions  filtered_errors_with_direct_phash  filtered_errors_with_transitive_candidate
+   axial       398                5               19                   16                                 10                                         10
+ coronal       305                5               18                   15                                  9                                          9
+sagittal       297                3                8                    9                                  4                                          4
+
+Ressalvas: pHash nao identifica pacientes; associação não prova causalidade.

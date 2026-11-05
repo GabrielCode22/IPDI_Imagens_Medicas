@@ -1,0 +1,23 @@
+=== DIVISAO FILTRADA E AGRUPADA — BRISC ===
+Nenhum arquivo original foi movido, apagado ou copiado.
+Train original: 5000 | teste oficial preservado: 1000
+Candidatos de train ligados ao teste removidos do pool: 1191
+Pool limpo: 3809
+Treino efetivo: 3047 | validacao: 762
+Fold selecionado: 2 de 5
+Diferenca em relacao aos 1191 candidatos do relatorio anterior: 0
+Componentes no pool limpo: 2925
+Maior componente: 12
+Componentes com mais de uma classe: 0
+Sobreposicao de componentes treino-validacao: 0
+
+Distribuicao por classe:
+  Pool limpo: {'glioma': 829, 'meningioma': 1028, 'no_tumor': 1033, 'pituitary': 919}
+  Treino:     {'glioma': 663, 'meningioma': 822, 'no_tumor': 827, 'pituitary': 735}
+  Validacao:  {'glioma': 166, 'meningioma': 206, 'no_tumor': 206, 'pituitary': 184}
+
+Pares pHash dentro do teste preservados: 68
+Imagens do teste envolvidas nesses pares: 120
+
+ATENCAO: pHash sinaliza similaridade visual, nao identidade de paciente.
+O conjunto de teste permanece intocado e pode conter imagens relacionadas entre si.

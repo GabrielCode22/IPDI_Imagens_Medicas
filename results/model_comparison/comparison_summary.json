@@ -1,0 +1,75 @@
+{
+  "test_protocol": "Same official BRISC classification test; same preprocessing; no weight updates or calibration fitting.",
+  "device": "cuda",
+  "classes": [
+    "glioma",
+    "meningioma",
+    "no_tumor",
+    "pituitary"
+  ],
+  "original_checkpoint": "checkpoints/best_resnet18.pth",
+  "filtered_checkpoint": "checkpoints/best_resnet18_filtered.pth",
+  "original_best_epoch": 8,
+  "filtered_best_epoch": 4,
+  "full_test": {
+    "original": {
+      "n_images": 1000,
+      "accuracy": 0.987,
+      "macro_precision": 0.9886532649869396,
+      "macro_recall": 0.9886773712109516,
+      "macro_f1": 0.9886639763012949,
+      "nll": 0.054806143045425415,
+      "multiclass_brier": 0.02394681935993706,
+      "top_label_ece_15_bins": 0.008623764693737056,
+      "mean_top_confidence": 0.9914478659629822
+    },
+    "filtered": {
+      "n_images": 1000,
+      "accuracy": 0.955,
+      "macro_precision": 0.9517693759606182,
+      "macro_recall": 0.9579200026467279,
+      "macro_f1": 0.9542077689504435,
+      "nll": 0.14892669022083282,
+      "multiclass_brier": 0.07077759960848447,
+      "top_label_ece_15_bins": 0.020586051583290133,
+      "mean_top_confidence": 0.9675505757331848
+    }
+  },
+  "secondary_test_internal_phash_sensitivity": {
+    "description": "Análise de sensibilidade removendo imagens diretamente envolvidas em pares test-test pHash; não constitui conjunto independente nem prova de independência por paciente.",
+    "flagged_test_images_found": 120,
+    "remaining_images": 880,
+    "original": {
+      "n_images": 880,
+      "accuracy": 0.9852272727272727,
+      "macro_precision": 0.9871202570757632,
+      "macro_recall": 0.9870776050914993,
+      "macro_f1": 0.9870972412454196,
+      "nll": 0.06113898381590843,
+      "multiclass_brier": 0.026983925691967954,
+      "top_label_ece_15_bins": 0.009562020139260764,
+      "mean_top_confidence": 0.9913473129272461
+    },
+    "filtered": {
+      "n_images": 880,
+      "accuracy": 0.9556818181818182,
+      "macro_precision": 0.9529382989649098,
+      "macro_recall": 0.9576322387161629,
+      "macro_f1": 0.9547660667250806,
+      "nll": 0.15398095548152924,
+      "multiclass_brier": 0.07135782410949205,
+      "top_label_ece_15_bins": 0.019560074738480787,
+      "mean_top_confidence": 0.9683713912963867
+    }
+  },
+  "n_prediction_changes": 40,
+  "n_both_correct": 951,
+  "n_original_only_correct": 36,
+  "n_filtered_only_correct": 4,
+  "caveats": [
+    "pHash identifies visual-similarity candidates, not patient identity.",
+    "The official test contains internal pHash-related images; full-test scores may be dependent.",
+    "The secondary subset is a sensitivity analysis, not a patient-independent test set.",
+    "Raw softmax probabilities are compared; no temperature was fitted on the test set."
+  ]
+}

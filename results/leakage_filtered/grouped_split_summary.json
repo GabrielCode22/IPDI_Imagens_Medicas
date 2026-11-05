@@ -1,0 +1,52 @@
+{
+  "method": "remove train files in combined exact-SHA256/pHash connected components touching official test; split remaining train by StratifiedGroupKFold",
+  "phash_hamming_threshold": 6,
+  "phash_scope": "same class and same anatomical plane, as in the prior audit",
+  "random_seed": 42,
+  "n_splits": 5,
+  "selected_fold": 2,
+  "original_train_images": 5000,
+  "official_test_images_untouched": 1000,
+  "removed_train_candidates_linked_to_test": 1191,
+  "clean_pool_images": 3809,
+  "fit_train_images": 3047,
+  "validation_images": 762,
+  "original_candidates_from_prior_report": 1191,
+  "candidate_set_symmetric_difference_vs_prior_audit": 0,
+  "sha_exact_groups_processed": 46,
+  "phash_pairs_processed": 2939,
+  "unknown_edge_paths": 0,
+  "fit_train_class_counts": {
+    "glioma": 663,
+    "meningioma": 822,
+    "no_tumor": 827,
+    "pituitary": 735
+  },
+  "validation_class_counts": {
+    "glioma": 166,
+    "meningioma": 206,
+    "no_tumor": 206,
+    "pituitary": 184
+  },
+  "clean_pool_class_counts": {
+    "glioma": 829,
+    "meningioma": 1028,
+    "no_tumor": 1033,
+    "pituitary": 919
+  },
+  "fit_train_fraction_of_clean_pool": 0.7999474927802572,
+  "validation_fraction_of_clean_pool": 0.20005250721974271,
+  "clean_components": 2925,
+  "largest_clean_component_size": 12,
+  "clean_components_with_multiple_classes": 0,
+  "train_val_component_overlap": 0,
+  "test_test_phash_pairs_preserved": 68,
+  "test_images_in_test_test_phash_pairs": 120,
+  "caveats": [
+    "pHash candidates are visual-similarity flags, not confirmed duplicates or patient identities.",
+    "All train images connected transitively to any official test image were conservatively excluded from the new fit/validation pool.",
+    "The official test set was not modified; it still contains pHash-related images within test.",
+    "No patient/exam identifiers exist, so patient-level independence cannot be guaranteed.",
+    "The new metrics must be reported as an exploratory filtered-split comparison, not a fully patient-independent clinical estimate."
+  ]
+}
